@@ -17,7 +17,18 @@
         <column_label>Script</column_label>
         <comments/>
         <create_roles/>
-        <default_value/>
+        <default_value>/*resolver(response);&#13;
+function resolver(response){&#13;
+	try{&#13;
+		var arrRes=JSON.parse(response.data).result;&#13;
+		var res = arrRes.map(function(rec){&#13;
+			return {number: "" + rec.number, short_description: "" + rec.short_description};&#13;
+		});&#13;
+		return {data:JSON.stringify(res) , status: response.status, req: response.req};&#13;
+	}catch (ex) {&#13;
+		return {data: "" + ex.message, status: 500, req: {}};&#13;
+	}&#13;
+}*/</default_value>
         <defaultsort/>
         <delete_roles/>
         <dependent/>
@@ -54,14 +65,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-22 13:17:56</sys_created_on>
         <sys_id>a1fab82c2f0481107beed6c6f699b623</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Script</sys_name>
         <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
         <sys_update_name>sys_dictionary_x_307427_easy_in_0_resolver_script</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-22 13:17:56</sys_updated_on>
+        <sys_updated_on>2021-11-27 20:29:56</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

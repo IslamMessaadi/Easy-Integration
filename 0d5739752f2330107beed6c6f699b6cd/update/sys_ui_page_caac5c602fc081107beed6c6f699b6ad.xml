@@ -26,17 +26,20 @@
 	<h4>${JS,HTML:msg}</h4>
 	
 	<pre>
-		var response = repo.XXXXX(Method, Params, Payload, SourceGlideRecord, LevelSource);
-		+ Method: get/post/put/patch/delete
-		+ Params: path params, e.g: '?sysparm_limit=1'
-		+ Payload: Json format or Valid Object
-		+ SourceGlideRecord: source that call spoke function
-		+ LevelSource: level message as string value, for debuging and reporting purposes.
+		var response = repo.XXXXX(PathExt, Method, Params, Payload, SourceGlideRecord, LevelSource);
+		+ XXXXX: this integration setup name.
+		+ PathExt: Optional to be add to the url.
+		+ Method: get/post/put/patch/delete.
+		+ Params: Json or valid url path format, e.g: '?sysparm_limit=1' or {"sysparm_limit":"1"}
+		+ Payload: Json format or Valid Object.
+		+ SourceGlideRecord: source that use this integration spoke.
+		+ LevelSource: level message as string value, for debuging and reporting purposes, e.g: "testing","business logic" ...etc.
 
 		Output:
 		-------
 		response = {data /*Response data*/, status /*Api call status*/, req /*Request Object*/}
-		PS: data can be transformed using a valid resolver.
+		+ req:{reqBody, reqQueryParam, url}
+		+ Important: data can be transformed using a valid/active resolver.
 	</pre>
 	
 	<div class="float-right">
@@ -50,13 +53,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-22 11:06:01</sys_created_on>
         <sys_id>caac5c602fc081107beed6c6f699b6ad</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>4</sys_mod_count>
         <sys_name>PreviewIntegrationScript</sys_name>
         <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
         <sys_update_name>sys_ui_page_caac5c602fc081107beed6c6f699b6ad</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-22 14:23:39</sys_updated_on>
+        <sys_updated_on>2021-11-27 20:21:36</sys_updated_on>
     </sys_ui_page>
 </record_update>

@@ -30,10 +30,10 @@
         <onclick>previewSpokeScript()</onclick>
         <order>0</order>
         <script><![CDATA[function previewSpokeScript() {
-    var dd = new GlideModal('x_307427_easy_in_0_PreviewIntegrationScript');
-    dd.setTitle('Preview Integration script usage');
-    dd.setPreference('sysparm_id', g_form.getUniqueValue());
-    dd.render();
+    var dialog = new GlideModal('x_307427_easy_in_0_PreviewIntegrationScript', true);
+    //dd.setTitle('Preview Integration script usage');
+    dialog.setPreference('sysparm_id', g_form.getUniqueValue());
+    dialog.render();
 }]]></script>
         <show_insert>false</show_insert>
         <show_multiple_update>false</show_multiple_update>
@@ -45,7 +45,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>67db5c202fc081107beed6c6f699b6f6</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>Preview Script Usage</sys_name>
         <sys_overrides/>
         <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
@@ -53,7 +53,7 @@
         <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
         <sys_update_name>sys_ui_action_67db5c202fc081107beed6c6f699b6f6</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-22 11:06:22</sys_updated_on>
+        <sys_updated_on>2021-11-27 20:20:39</sys_updated_on>
         <table>x_307427_easy_in_0_integration</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>

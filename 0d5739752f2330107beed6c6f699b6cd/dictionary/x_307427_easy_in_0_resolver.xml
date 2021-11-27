@@ -2,7 +2,7 @@
     <element label="Resolver" max_length="40" name="x_307427_easy_in_0_resolver" sizeclass="2" type="collection">
         <element label="Active" max_length="40" name="active" type="boolean"/>
         <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
-        <element label="Script" mandatory="true" max_length="8000" name="script" type="script_plain"/>
+        <element default="/*resolver(response);&#13;&#10;function resolver(response){&#13;&#10;&#9;try{&#13;&#10;&#9;&#9;var arrRes=JSON.parse(response.data).result;&#13;&#10;&#9;&#9;var res = arrRes.map(function(rec){&#13;&#10;&#9;&#9;&#9;return {number: &quot;&quot; + rec.number, short_description: &quot;&quot; + rec.short_description};&#13;&#10;&#9;&#9;});&#13;&#10;&#9;&#9;return {data:JSON.stringify(res) , status: response.status, req: response.req};&#13;&#10;&#9;}catch (ex) {&#13;&#10;&#9;&#9;return {data: &quot;&quot; + ex.message, status: 500, req: {}};&#13;&#10;&#9;}&#13;&#10;}*/" label="Script" mandatory="true" max_length="8000" name="script" type="script_plain"/>
         <element label="Short Description" max_length="200" name="short_description" type="string"/>
     </element>
 </database>
