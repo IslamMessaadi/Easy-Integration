@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Resolver" max_length="40" name="x_307427_easy_in_0_resolver" sizeclass="2" type="collection">
+        <element label="Active" max_length="40" name="active" type="boolean"/>
+        <element display="true" label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element label="Script" mandatory="true" max_length="8000" name="script" type="script_plain"/>
+        <element label="Short Description" max_length="200" name="short_description" type="string"/>
+    </element>
+</database>

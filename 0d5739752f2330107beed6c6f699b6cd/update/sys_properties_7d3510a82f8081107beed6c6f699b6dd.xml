@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x_307427_easy_in_0.ei.str.function.template</name>
+        <read_roles/>
+        <suffix>ei.str.function.template</suffix>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-22 10:33:26</sys_created_on>
+        <sys_id>7d3510a82f8081107beed6c6f699b6dd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_307427_easy_in_0.ei.str.function.template</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_properties_7d3510a82f8081107beed6c6f699b6dd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-27 12:59:31</sys_updated_on>
+        <type>string</type>
+        <value>function (e,o,r,n,X,s){var p=spoke.template,t=spoke.get(repo.XXXXX_Id,"x_307427_easy_in_0_integration"),d=spoke.setHeader(t),i=p(""!=e?encodeURI(t.endpoint+"/"+e):encodeURI(t.endpoint),r,o,d,n,t.mid_server);if(null!=t.resolver&amp;&amp;""!=t.resolver){var a=spoke.resolver(repo.XXXXX_Id,i);return a&amp;&amp;spoke.addConversationWithResponse(repo.XXXXX_Id,o,r,n,X,s,a),a}return i&amp;&amp;spoke.addConversationWithResponse(repo.XXXXX_Id,o,r,n,X,s,i),i};</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=7d3510a82f8081107beed6c6f699b6dd"/>
+</record_update>
