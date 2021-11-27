@@ -16,7 +16,7 @@
 	</style>
 
 	<div class="container-sm">
-		<div>  <img src="07f89d6a2f16b4105d295ff62799b622.iix" width="" height=""/></div>
+		<div>  <img src="applogo.png" width="" height=""/></div>
 	  <h1 class = "atl_header">Support</h1>
 			<p>XXXXX provides Technical Support as follow:</p>
 		<ul>
@@ -38,13 +38,13 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2021-11-27 19:51:44</sys_created_on>
         <sys_id>46a4809a2fc401107beed6c6f699b6b4</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>About Easy Integration</sys_name>
         <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
         <sys_policy/>
         <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
         <sys_update_name>sys_ui_page_46a4809a2fc401107beed6c6f699b6b4</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2021-11-27 19:56:24</sys_updated_on>
+        <sys_updated_on>2021-11-27 20:46:08</sys_updated_on>
     </sys_ui_page>
 </record_update>
