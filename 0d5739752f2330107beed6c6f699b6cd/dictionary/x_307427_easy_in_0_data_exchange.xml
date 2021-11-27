@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Data Exchange" max_length="40" name="x_307427_easy_in_0_data_exchange" sizeclass="10" type="collection">
+        <element label="Integration" max_length="32" name="integration" reference="x_307427_easy_in_0_integration" type="reference"/>
+        <element label="Level" max_length="100" name="level" read_only="true" type="string"/>
+        <element choice="3" default="get" label="Method" max_length="40" name="method" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Get" sequence="100" value="get"/>
+                <element inactive_on_update="false" label="Post" sequence="200" value="post"/>
+                <element inactive_on_update="false" label="Patch" sequence="300" value="patch"/>
+                <element inactive_on_update="false" label="Put" sequence="400" value="put"/>
+                <element inactive_on_update="false" label="Delete" sequence="500" value="delete"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Params" max_length="500" name="params" type="string"/>
+        <element label="Path Extension" max_length="100" name="path_extension" type="string"/>
+        <element label="Payload" max_length="500" name="payload" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Response" max_length="4000" name="response" type="string_full_utf8"/>
+        <element dependent="table" dependent_on_field="table" label="Source" max_length="32" name="source" read_only="true" type="document_id" use_dependent_field="true"/>
+        <element choice="3" default="ready" label="State" max_length="40" name="state" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Ready" sequence="100" value="ready"/>
+                <element inactive_on_update="false" label="Processed" sequence="200" value="processed"/>
+                <element inactive_on_update="false" label="Failed" sequence="300" value="failed"/>
+            </choice>
+        </element>
+        <element label="Table" max_length="80" name="table" read_only="true" type="table_name"/>
+        <index name="index">
+            <element name="integration"/>
+        </index>
+        <index name="index2">
+            <element name="source"/>
+        </index>
+    </element>
+</database>

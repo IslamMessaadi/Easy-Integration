@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="INSERT_OR_UPDATE">
+        <grid_canvas display_value="PA Easy Integration Usa - New Tab">04f575b42f4001107beed6c6f699b610</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 2021-11-23 04:19:46">674735f42f4001107beed6c6f699b668</portal_widget>
+        <posx>6</posx>
+        <posy>0</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-23 12:19:46</sys_created_on>
+        <sys_id>6f4735f42f4001107beed6c6f699b669</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>04f575b42f4001107beed6c6f699b610</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_6f4735f42f4001107beed6c6f699b669</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-23 12:20:30</sys_updated_on>
+        <width>6</width>
+    </sys_grid_canvas_pane>
+</record_update>

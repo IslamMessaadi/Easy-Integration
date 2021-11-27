@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Integration" max_length="40" name="x_307427_easy_in_0_integration" sizeclass="2" type="collection">
+        <element choice="1" label="Credentials" max_length="32" name="credentials" reference="discovery_credentials" reference_qual="active=true^type=basic_auth^ORtype=api_key^EQ" reference_qual_condition="active=true^type=basic_auth^ORtype=api_key^EQ" type="reference">
+            <choice/>
+        </element>
+        <element label="EndPoint" mandatory="true" max_length="1024" name="endpoint" type="url"/>
+        <element label="Mid Server" max_length="32" name="mid_server" reference="ecc_agent" type="reference"/>
+        <element label="Name" mandatory="true" max_length="100" name="name" type="string"/>
+        <element choice="3" default="json" label="Output" max_length="40" name="output" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="JSON" sequence="100" value="json"/>
+                <element inactive_on_update="false" label="XML" sequence="200" value="xml"/>
+                <element inactive_on_update="false" label="TEXT" sequence="300" value="text"/>
+            </choice>
+        </element>
+        <element label="Published" max_length="40" name="published" read_only="true" type="boolean"/>
+        <element label="Resolver" max_length="32" name="resolver" reference="x_307427_easy_in_0_resolver" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <element label="Short Description" max_length="500" name="short_description" type="string"/>
+        <element label="Signature" max_length="100" name="signature" read_only="true" type="string"/>
+        <index name="index">
+            <element name="resolver"/>
+        </index>
+        <index name="index2">
+            <element name="mid_server"/>
+        </index>
+        <index name="index3">
+            <element name="credentials"/>
+        </index>
+    </element>
+</database>

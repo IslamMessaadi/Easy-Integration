@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Easy Integration">08c7f8682f0481107beed6c6f699b6d6</application>
+        <assessment/>
+        <device_type/>
+        <filter table="sys_properties">name=x_307427_easy_in_0.ei.str.function.template^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="=" or="false" value="x_307427_easy_in_0.ei.str.function.template"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>DETAIL</link_type>
+        <map_page/>
+        <mobile_title>Integration Template</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sys_properties</name>
+        <order>700</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>/nav_to.do?uri=sys_properties.do?sys_id=7d3510a82f8081107beed6c6f699b6dd</query>
+        <report/>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-22 13:09:24</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>67a878a82f0481107beed6c6f699b681</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Integration Template</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_app_module_67a878a82f0481107beed6c6f699b681</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-27 19:57:23</sys_updated_on>
+        <timeline_page/>
+        <title>Integration Template</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>

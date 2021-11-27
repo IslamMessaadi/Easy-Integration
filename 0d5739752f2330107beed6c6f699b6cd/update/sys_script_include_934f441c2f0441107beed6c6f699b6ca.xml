@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_307427_easy_in_0.spoke</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>spoke</name>
+        <script><![CDATA[var spoke = Class.create();
+spoke.prototype = {
+    initialize: function() {}
+};
+
+var isJson=function (str) {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+};
+
+var getPathExt=function (fullUrl, integrationUrl) {
+	return fullUrl.slice(integrationUrl.length, fullUrl.length);
+};
+
+spoke.smartParser=function(strJson){
+	try{
+		if(strJson && strJson != ""){
+			if(isJson(strJson)){
+				var s2o= JSON.parse(strJson);
+				if (s2o && typeof s2o == "object"){
+					return Object.keys(s2o).map(function(o){
+						return {key: ""+o, value:"" + s2o[o]};
+					});
+				}
+			}else{
+				var str2obj = JSON.parse('{"' + strJson.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value);});
+				if (str2obj && typeof str2obj == "object"){
+					return Object.keys(str2obj).map(function(o){
+						return {key: ""+o, value:"" + str2obj[o]};
+					});
+				}
+			}
+		}
+		return null;
+	}catch(e){
+		return null;
+	}
+};
+
+spoke.template= function(e, p, o, h, pl, midserver){
+	try {
+		var request = new sn_ws.RESTMessageV2();
+		request.setHttpMethod(o);
+		request.setEndpoint(e);
+
+		if(h && h.length){
+			h.forEach(function(e){
+				if(e.key=="key"){
+					request.setQueryParameter(e.key, e.value);
+				}else{
+					request.setRequestHeader(e.key, e.value);
+				}
+			});
+		}
+		
+		if(o == 'post' || o == 'put' || o == 'patch'){
+			if(typeof pl == "object"){
+				request.setRequestBody(JSON.stringify(pl));
+			}else{
+				request.setRequestBody(pl);
+			}
+		}
+
+		midserver && request.setMIDServer(midserver);
+		
+		if(p && p!= "") {
+			var params= spoke.smartParser(p);
+			params && params.forEach(function(param){
+				return request.setQueryParameter(param.key, param.value);
+			});
+		}
+	
+		var response = request.execute();
+		var httpResponseStatus = response.getStatusCode();
+		
+		return {data: response.getBody(), status:httpResponseStatus, 
+			req: {reqBody:request.getRequestBody(), reqQueryParam:response.getQueryString(), url:request.getEndpoint()}};
+	}
+	catch (ex) {
+		return {data: ex.message, status:500, 
+			req: {reqBody:request.getRequestBody(), reqQueryParam:response.getQueryString(), url:request.getEndpoint()}};
+	}
+};
+
+spoke.get=function(sysId, table){
+	var spokeGr = new GlideRecord(table);
+	spokeGr.get(sysId);
+	if (spokeGr.isValidRecord()) {
+		return spokeGr;
+	}
+	return null;
+};
+
+spoke.getParams=function(setupGr){
+	var paramsStr="";
+	if(setupGr.params && JSON.parse(setupGr.params) && JSON.parse(setupGr.params).length){
+		paramsStr="?";
+		JSON.parse(setupGr.params).forEach(function(e){
+			paramsStr +="&" + e.key + "=" + e.value;
+		});
+	}
+	return paramsStr;
+
+};
+
+spoke.setHeader=function(setupGr){
+	var headerReq= [];
+	if(setupGr.output == "json"){
+		headerReq.push({key: "Accept", value: "application/json"});
+		headerReq.push({key: "Content-Type", value: "application/json"});
+	}
+
+	if(setupGr.output == "xml"){
+		headerReq.push({key: "Accept", value: "application/xml"});
+		headerReq.push({key: "Content-Type", value: "application/xml"});
+	}
+
+	if(setupGr.output == "text"){
+		headerReq.push({key: "Accept", value: "text/xml"});
+		headerReq.push({key: "Content-Type", value: "text/xml"});
+	}
+	
+	if(setupGr.credentials){
+
+		var provider = new sn_cc.StandardCredentialsProvider();
+		var credential = provider.getCredentialByID(setupGr.credentials);
+		if(!credential.getAttribute("api_key")){
+			var userName = credential.getAttribute("user_name");
+			var password = credential.getAttribute("password");
+			headerReq.push({
+				key:"Authorization", 
+				value: "Basic " + gs.base64Encode(userName +":"+ password)});
+		}else{
+			headerReq.push({
+				key:"key", 
+				value: credential.getAttribute("api_key")});
+		}
+	}
+
+	/*if(setupGr.authorization == "oauth_2"){
+		headerReq.push({
+			key:"Authorization", 
+			value: "Bearer " + setupGr.access_token});
+	}
+
+	if(setupGr.authorization == "api_key"){
+		headerReq.push({
+			key:"x-api-key", 
+			value: "Basic " +  setupGr.key});
+	}*/
+
+	return headerReq;
+};
+
+spoke.testConnection=function(gr$){
+	gr$ && spoke.addConversation(gr$, 'get', '', '', 'Testing');
+};
+
+spoke.generateCode=function(){
+	return  Math.random().toString(36).substring(2, 15);//9-10-11
+};
+
+spoke.publish=function(gr$){
+	var si = spoke.get("c99f40d82f0441107beed6c6f699b698", "sys_script_include");
+	var code = spoke.generateCode();
+	var fn= gs.getProperty('x_307427_easy_in_0.ei.str.function.template').replace(/XXXXX/img, gr$.name.toString());
+	si.script += "\n//" + code + "\nrepo."+ gr$.name +"_Id = '"+ gr$.sys_id + "'; //spoke_sys_id";
+	si.script += "\n//" + code + "\nrepo."+gr$.name +" = "+ fn + "//spoke_function";
+	si.update();
+
+	gr$.signature= code;
+	gr$.published= true;
+	gr$.update();
+};
+
+spoke.unpublish=function(gr$){
+	if(gr$.name && repo[gr$.name]){
+		var si = spoke.get("c99f40d82f0441107beed6c6f699b698", "sys_script_include");
+		var re = new RegExp("\/\/"+gr$.signature+"\\n.*\/\/spoke_function","g");
+		var rf = new RegExp("\/\/"+gr$.signature+"\\n.*\/\/spoke_sys_id","g");
+		si.script = si.script.replace(re, '').replace(rf, '').trim();//.replace(rf, '')
+		si.update();
+		if(!re.test(si.script)){
+			gr$.signature= "";
+			gr$.published= false;
+			gr$.update();
+		}
+	}
+};
+
+spoke.addConversation= function(currentGr, o, p, pl, lvl){
+	var conversationGr = new GlideRecord("x_307427_easy_in_0_data_exchange");
+	conversationGr.initialize();
+	conversationGr.integration = currentGr.sys_id;
+	conversationGr.state = 'ready';
+	conversationGr.payload= pl;
+	conversationGr.method = o;
+
+	if(currentGr && currentGr != "" && currentGr != null){
+		conversationGr.table= currentGr.getTableName();
+		conversationGr.source = currentGr.getValue('sys_id');
+	}
+
+	conversationGr.level = lvl;
+	conversationGr.params = p;
+	conversationGr.insert();
+};
+
+spoke.addConversationWithResponse = function(integrationId, o, p, pl, callerGr, lvl, response){
+	var conversationGr = new GlideRecord("x_307427_easy_in_0_data_exchange");
+	conversationGr.initialize();
+	conversationGr.integration = integrationId;
+	conversationGr.payload= pl;
+	conversationGr.method = o;
+	if(callerGr && callerGr != "" && callerGr != null){
+		conversationGr.table= callerGr.getTableName();
+		conversationGr.source = callerGr.sys_id;
+	}
+
+	var pathExt= getPathExt(response.req.url, conversationGr.integration.endpoint.toString());
+
+	conversationGr.response= response.data;
+	conversationGr.path_extension= pathExt;
+
+	conversationGr.state= response.status.toString()[0] == "2" ? 'processed':'failed';
+	conversationGr.level = lvl;
+	conversationGr.params = p;
+	conversationGr.insert();
+};
+
+spoke.run = function(conversationGr){
+	var newRes= null;
+	var fn$ = spoke.template;
+	var gr$= conversationGr.integration;
+	var headerReq= spoke.setHeader(gr$);
+
+	var url = encodeURI(gr$.endpoint);
+	var response = fn$(url, conversationGr.params, conversationGr.method, headerReq, conversationGr.payload, gr$.mid_server);
+	
+	if(gr$.resolver != null && gr$.resolver != ""){
+		var resRez= spoke.resolver(gr$.sys_id, response);
+		newRes= resRez && resRez.data;
+	}
+	//gs.info(JSON.stringify(response.req))
+
+	conversationGr.params= response.req.reqQueryParam;
+	conversationGr.payload= response.req.reqBody;
+	
+	var pathExt= getPathExt(response.req.url, conversationGr.integration.endpoint.toString());
+	conversationGr.path_extension= pathExt;
+
+	conversationGr.response=  newRes ? newRes : response.data;
+	conversationGr.state= response.status.toString()[0] == "2" ? 'processed':'failed';
+	conversationGr.update();
+};
+
+spoke.resolver= function (spokeId, response) {
+	var gr$= spoke.get(spokeId, 'x_307427_easy_in_0_integration');
+	var evaluator = new GlideScopedEvaluator();
+	var resolverGR = spoke.get(gr$.resolver, "x_307427_easy_in_0_resolver");//<-- resolver record
+	evaluator.putVariable('response', response);
+	var output = evaluator.evaluateScript(resolverGR, "script");
+	return output;
+};
+
+/*spoke.test= function (pathext, o, p, pl, currentGr, lvl){
+	var fn$= spoke.template;
+	var gr$= spoke.get(repo.XXXXX_Id, 'x_307427_easy_in_0_integration');
+	var headerReq= spoke.setHeader(gr$);
+	var url= pathext!=""? encodeURI(gr$.endpoint + "/"+ pathext): encodeURI(gr$.endpoint);
+	
+	var response = fn$(url, p, o, headerReq, pl, gr$.mid_server);
+	if(gr$.resolver != null && gr$.resolver != ""){
+		var newRes= spoke.resolver(repo.XXXXX_Id, response);
+		newRes && spoke.addConversationWithResponse(repo.XXXXX_Id, o , p, pl, currentGr, lvl, newRes);//repo.XXXXX_Id
+		return newRes;
+	}else{
+		response && spoke.addConversationWithResponse(repo.XXXXX_Id, o , p, pl, currentGr, lvl, response);
+		return response;
+	}
+};*/]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-21 15:29:00</sys_created_on>
+        <sys_id>934f441c2f0441107beed6c6f699b6ca</sys_id>
+        <sys_mod_count>132</sys_mod_count>
+        <sys_name>spoke</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_script_include_934f441c2f0441107beed6c6f699b6ca</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-27 13:38:58</sys_updated_on>
+    </sys_script_include>
+</record_update>

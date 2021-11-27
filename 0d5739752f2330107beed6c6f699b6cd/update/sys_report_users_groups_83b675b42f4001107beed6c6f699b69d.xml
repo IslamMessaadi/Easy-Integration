@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="All Integrations">0fb675b42f4001107beed6c6f699b69c</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-23 12:17:16</sys_created_on>
+        <sys_id>83b675b42f4001107beed6c6f699b69d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>0fb675b42f4001107beed6c6f699b69c</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_report_users_groups_83b675b42f4001107beed6c6f699b69d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-23 12:17:16</sys_updated_on>
+        <user_id display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</user_id>
+    </sys_report_users_groups>
+</record_update>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description>About me app!</description>
+        <direct>false</direct>
+        <endpoint>x_307427_easy_in_0_About Easy Integration.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	
+	<g:requires name="styles/heisenberg/heisenberg_all.css" includes="true"/>
+	<style>
+		.container-sm {margin:2em;}
+		a {color: #00a2c1;text-decoration: none;}
+		span{margin-left: 1em;}
+	</style>
+
+	<div class="container-sm">
+		<div>  <img src="07f89d6a2f16b4105d295ff62799b622.iix" width="" height=""/></div>
+	  <h1 class = "atl_header">Support</h1>
+			<p>XXXXX provides Technical Support as follow:</p>
+		<ul>
+			<li><strong>Support Hours of Operation:</strong> <span>XX am - XX pm CET</span></li>
+			<li><strong>Support Says of Operation:</strong> <span>Monday - Friday business days</span></li>
+			
+		</ul>
+		<h1 class = "atl_header">Contact Details</h1>
+		<ul>
+			<li><a rel="noopener noreferrer nofollow" href="http://atlafy.com/">XXXXXX.XXX</a></li>
+			<li>Contact Details: <a rel="noopener noreferrer nofollow" href="mailto:support@atlafy.com"> <span>XXXXXX@XXX.com</span></a></li>
+		</ul>
+	</div>
+	
+</j:jelly>]]></html>
+        <name>About Easy Integration</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-27 19:51:44</sys_created_on>
+        <sys_id>46a4809a2fc401107beed6c6f699b6b4</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>About Easy Integration</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_ui_page_46a4809a2fc401107beed6c6f699b6b4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-27 19:56:24</sys_updated_on>
+    </sys_ui_page>
+</record_update>

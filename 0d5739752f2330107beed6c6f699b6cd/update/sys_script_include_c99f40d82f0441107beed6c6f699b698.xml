@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_307427_easy_in_0.repo</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>repo</name>
+        <script><![CDATA[var repo = Class.create();repo.prototype = {initialize: function() {}};
+//kv4wzanmyyb
+repo.Nomics_Crypto_Id = '8c0d40982f0441107beed6c6f699b646'; //spoke_sys_id
+//kv4wzanmyyb
+repo.Nomics_Crypto = function (e,o,r,X,s){var n=spoke.template,p=spoke.get(repo.Nomics_Crypto_Id,"x_307427_easy_in_0_integration"),t=spoke.setHeader(p),d=n(encodeURI(p.endpoint),o,e,t,r,p.mid_server);if(null!=p.resolver&&""!=p.resolver){var i=spoke.resolver(repo.Nomics_Crypto_Id,d);return i&&spoke.addConversationWithResponse(repo.Nomics_Crypto_Id,e,o,r,X,s,i),i}return d&&spoke.addConversationWithResponse(repo.Nomics_Crypto_Id,e,o,r,X,s,d),d};//spoke_function
+//mnj1o16fjlp
+repo.Snow_Inc_Id = 'a018b5822f0001107beed6c6f699b6cc'; //spoke_sys_id
+//mnj1o16fjlp
+repo.Snow_Inc = function (e,o,r,n,X,s){var p=spoke.template,t=spoke.get(repo.Snow_Inc_Id,"x_307427_easy_in_0_integration"),d=spoke.setHeader(t),i=p(""!=e?encodeURI(t.endpoint+"/"+e):encodeURI(t.endpoint),r,o,d,n,t.mid_server);if(null!=t.resolver&&""!=t.resolver){var a=spoke.resolver(repo.Snow_Inc_Id,i);return a&&spoke.addConversationWithResponse(repo.Snow_Inc_Id,o,r,n,X,s,a),a}return i&&spoke.addConversationWithResponse(repo.Snow_Inc_Id,o,r,n,X,s,i),i};//spoke_function]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2021-11-21 15:29:56</sys_created_on>
+        <sys_id>c99f40d82f0441107beed6c6f699b698</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>repo</sys_name>
+        <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+        <sys_update_name>sys_script_include_c99f40d82f0441107beed6c6f699b698</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2021-11-27 13:00:30</sys_updated_on>
+    </sys_script_include>
+</record_update>

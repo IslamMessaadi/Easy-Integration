@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="6d2b3c2c2f0481107beed6c6f699b623" sys_domain="global" table="x_307427_easy_in_0_resolver" version="3" view="">
+        <sys_ui_annotation action="INSERT_OR_UPDATE">
+            <is_plain_text>false</is_plain_text>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>f75bb46c2f0481107beed6c6f699b6d1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <text>Resolver, a function that generate a customized response.</text>
+            <type display_value="Info Box Blue">753f88a80f930000b12e6903cfe01206</type>
+        </sys_ui_annotation>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>f75bb46c2f0481107beed6c6f699b6d1</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>3b5bb46c2f0481107beed6c6f699b6d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type>annotation</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>bb5bb46c2f0481107beed6c6f699b6d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>3f5bb46c2f0481107beed6c6f699b6d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>bf5bb46c2f0481107beed6c6f699b6d4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>335bb46c2f0481107beed6c6f699b6d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>b35bb46c2f0481107beed6c6f699b6d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>375bb46c2f0481107beed6c6f699b6d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>script</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:19:25</sys_created_on>
+            <sys_id>b75bb46c2f0481107beed6c6f699b6d5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_307427_easy_in_0_resolver" sys_domain="global" view="Default view">6d2b3c2c2f0481107beed6c6f699b623</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:19:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_307427_easy_in_0_resolver</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2021-11-22 13:18:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6d2b3c2c2f0481107beed6c6f699b623</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_307427_easy_in_0_resolver</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Easy Integration" source="x_307427_easy_in_0">0d5739752f2330107beed6c6f699b6cd</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Easy Integration">0d5739752f2330107beed6c6f699b6cd</sys_scope>
+            <sys_update_name>sys_ui_section_6d2b3c2c2f0481107beed6c6f699b623</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2021-11-22 13:18:26</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
