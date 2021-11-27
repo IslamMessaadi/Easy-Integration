@@ -1,2 +1,2 @@
 # Easy-Integration
-Easy Install easy configure easy use. Servicenow integration app!
+Easy Install --> easy configure --> easy use --> enjoy!
