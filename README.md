@@ -14,6 +14,8 @@ Servicenow integration setup utility, configure it once and use it everywhere si
 
 ![main page](https://user-images.githubusercontent.com/37014061/143722028-91d61d6c-24e9-43c0-a61b-7bd3be0334b5.JPG)
 
+How to use: https://www.youtube.com/watch?v=spNPUn9uKmk
+
 Script usage:
 -------------
 
